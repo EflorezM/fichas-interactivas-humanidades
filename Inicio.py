@@ -2,21 +2,23 @@ import streamlit as st
 
 st.set_page_config(page_title="Clases de Humanidades", page_icon="🏫")
 
-# Diseño de fondo sobrio y educativo (Efecto cuaderno cuadriculado sutil)
-estilo_fondo = """
+# Diseño UX: Fondo de Cuaderno Rayado Sobrio
+estilo_cuaderno = """
 <style>
+/* Crea las líneas horizontales suaves del cuaderno */
 [data-testid="stAppViewContainer"] {
-    background-color: #f7f9fc;
-    background-image: radial-gradient(#d1d8e0 1px, transparent 1px);
-    background-size: 25px 25px;
+    background-color: #fcfcfc;
+    background-image: repeating-linear-gradient(transparent, transparent 29px, #d2e4f0 29px, #d2e4f0 30px);
+    background-attachment: local;
 }
-[data-testid="stSidebar"] {
-    background-color: #ffffff;
-    border-right: 1px solid #e0e6ed;
+/* Mantiene el fondo blanco limpio en las cajas de texto para no cansar la vista */
+.stTextInput>div>div>input, .stTextArea>div>div>textarea, .stSelectbox>div>div>div {
+    background-color: white !important;
+    border: 1px solid #ccc !important;
 }
 </style>
 """
-st.markdown(estilo_fondo, unsafe_allow_html=True)
+st.markdown(estilo_cuaderno, unsafe_allow_html=True)
 
 st.title("Bienvenido al Portal de Clases 🏫")
 st.subheader("Profesor: Eduardo Florez Montero")
