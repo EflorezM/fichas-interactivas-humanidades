@@ -5,13 +5,13 @@ import io
 # Configuración de la página
 st.set_page_config(page_title="Ficha Cívica - Salud Pública", page_icon="⚖️", layout="centered")
 
-# Encabezado Oficial [cite: 111, 113, 114]
+# Encabezado Oficial
 st.markdown("### FICHA DE CÍVICA – SESIÓN 2° AÑO A - B - C")
 st.markdown("**Tema:** Derecho a la Vida y la Salud Pública")
 st.markdown("**Prof:** Eduardo Florez Montero / Unidad 1")
 st.markdown("---")
 
-# Datos del estudiante [cite: 115]
+# Datos del estudiante
 col1, col2, col3 = st.columns([2, 1, 1])
 with col1:
     nombre = st.text_input("Estudiante:")
@@ -22,7 +22,7 @@ with col3:
 
 st.markdown("---")
 
-# Secciones de contexto [cite: 116, 117, 118, 119, 120, 121]
+# Secciones de contexto
 with st.expander("🎯 META DE HOY", expanded=True):
     st.write("Relacionar el derecho a la vida con la salud pública y proponer normas de prevención e información responsable.")
 
@@ -31,14 +31,34 @@ with st.expander("📋 INDICACIONES", expanded=True):
     st.write("2) Luego elige UN reto: Nivel 2 (Medio) o Nivel 3 (Difícil).")
     st.write("3) Si falta tiempo, completa en casa. No uses nombres reales.")
 
-# Apoyos y Banco de Palabras [cite: 122, 123, 124, 125, 126, 127]
+# Apoyos y Banco de Palabras
 col_a, col_b = st.columns(2)
 with col_a:
     st.success("**APOYOS (DUA)**\n- Ejemplos de prevención en pizarra digital.\n- Plantilla “medida–beneficio–responsabilidad”.\n- Puedes responder con viñetas.")
 with col_b:
     st.warning("**BANCO DE PALABRAS**\nsalud pública, prevención, higiene, vacuna, información, verificar, responsabilidad, comunidad")
 
-# Lecturas [cite: 128, 129, 130, 131, 132, 133, 134]
+st.markdown("---")
+
+# --- NUEVA SECCIÓN: BOTÓN DE DESCARGA DE PRESENTACIÓN ---
+st.subheader("📚 Material de Apoyo")
+st.write("Descarga la presentación de la clase para repasar los conceptos clave antes de resolver la ficha.")
+
+try:
+    with open("Presentacion_Civica.pdf", "rb") as file:
+        st.download_button(
+            label="📄 Descargar Presentación de la Clase (PDF)",
+            data=file,
+            file_name="Presentacion_Civica.pdf",
+            mime="application/pdf"
+        )
+except FileNotFoundError:
+    st.info("📌 La presentación de la clase se está procesando y aparecerá aquí en breve.")
+
+st.markdown("---")
+# --------------------------------------------------------
+
+# Lecturas
 st.markdown("### LECTURAS POR NIVELES (ELIGE UNA)")
 tab1, tab2, tab3 = st.tabs(["Texto A (Fácil)", "Texto B (Medio)", "Texto C (Difícil)"])
 with tab1:
@@ -50,7 +70,7 @@ with tab3:
 
 st.markdown("---")
 
-# NIVEL 1 [cite: 135, 136, 137, 138, 139]
+# NIVEL 1
 st.subheader("NIVEL 1 (FÁCIL) – PARA TODOS")
 st.caption("⚠️ Debes completar todas las preguntas de este nivel para poder generar tu archivo.")
 
@@ -61,15 +81,15 @@ with col_n1a:
 with col_n1b:
     q1_2 = st.text_input("Acción 2:")
 
-q2 = text_input_2 = st.text_input("2) Difundir información falsa de salud puede...")
+q2 = st.text_input("2) Difundir información falsa de salud puede...")
 q3 = st.radio("3) Antes de compartir una noticia debo:", ["verificar", "reenviar sin leer", "insultar"], horizontal=True)
 q4 = st.text_input("4) 1 compromiso de salud en el aula:")
 
-st.info("🎨 *ORGANIZADOR GRÁFICO:* Recuerda realizar tu dibujo en tu cuaderno o en una hoja aparte para mostrarlo en clase. [cite: 140]")
+st.info("🎨 *ORGANIZADOR GRÁFICO:* Recuerda realizar tu dibujo en tu cuaderno o en una hoja aparte para mostrarlo en clase.")
 
 st.markdown("---")
 
-# NIVEL 2 [cite: 142, 143, 144, 145, 146]
+# NIVEL 2
 st.subheader("NIVEL 2 (MEDIO) – RETO 1")
 st.write("5) Caso: “Las vacunas hacen daño” (sin pruebas). 2 preguntas para verificar:")
 q5_1 = st.text_input("Pregunta 1 para verificar:")
@@ -79,7 +99,7 @@ st.write("6) 2 normas para compartir información de salud:")
 q6_1 = st.text_input("Norma 1:")
 q6_2 = st.text_input("Norma 2:")
 
-st.write("TABLA DE COMPARACIÓN (Describe 3 medidas) [cite: 147, 148]")
+st.write("TABLA DE COMPARACIÓN (Describe 3 medidas)")
 # Fila 1
 col_t1a, col_t1b, col_t1c, col_t1d = st.columns(4)
 with col_t1a:
@@ -113,7 +133,7 @@ with col_t3d:
 
 st.markdown("---")
 
-# NIVEL 3 [cite: 149, 150, 151, 152]
+# NIVEL 3
 st.subheader("NIVEL 3 (DIFÍCIL) – RETO 2")
 st.markdown("🌟 **¡RETO FINAL!** Demuestra todo lo que has aprendido completando este nivel.")
 q7 = st.text_area("7) Mensaje de campaña (2 líneas):")
@@ -128,7 +148,7 @@ val_funcional = st.slider("1. ¿Qué tan fácil y funcional te pareció usar est
 val_interes = st.radio("2. ¿El tema y las actividades te parecieron interesantes para tu aprendizaje?", ["Sí, mucho", "Estuvo bien", "No mucho", "Nada interesante"], horizontal=True)
 
 st.markdown("---")
-st.caption("🔒 SEGURIDAD : No compartas datos personales. Usa ejemplos sin nombres reales. [cite: 156]")
+st.caption("🔒 SEGURIDAD : No compartas datos personales. Usa ejemplos sin nombres reales.")
 
 # Lógica para generar Word
 if st.button("Generar mi Evidencia en Word"):
