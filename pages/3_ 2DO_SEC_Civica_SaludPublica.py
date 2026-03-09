@@ -4,7 +4,7 @@ import io
 
 st.set_page_config(page_title="Ficha Cívica - Salud Pública", page_icon="⚖️", layout="centered")
 
-st.markdown("### FICHA DE CÍVICA – SESIÓN 2° AÑO A - B - C")
+st.markdown("### FICHA DE CÍVICA – SESIÓN2- 2° AÑO A - B - C")
 st.markdown("**Tema:** Derecho a la Vida y la Salud Pública")
 st.markdown("**Prof:** Eduardo Florez Montero / Unidad 1")
 st.markdown("---")
